@@ -1,38 +1,208 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,80,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  font-size: 62.5%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.App-header {
-  background-color: #282c34;
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to top, #143ef7, #6d93fd, transparent);
+  border-radius: 8px;
+}
+
+/* ::-webkit-scrollbar-thumb:hover {
+  background: #f87505;
+} */
+
+.main-div {
+  width: 100%;
   min-height: 100vh;
+  background: #ffffff;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 5rem 1rem;
+  /* align-items: center; */
+}
+
+.child-div {
+
+  text-align: center;
+  padding: 3rem 2rem;
+  display: flex;
+  border-radius: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0px 1px 28px #ddd;
+  border-bottom: 5px solid rgb(85, 41, 220);
+  border-top: 5px solid rgb(85, 41, 220);
+
+}
+
+
+input {
+
+  width: 70%;
+  height: 3.2rem;
+  padding: 2rem 1.2rem;
+  font-size: 1.8rem;
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(85, 41, 220);
+  border-radius: 0.4rem;
+
+}
+
+
+input:focus,
+input:active,
+input:active:focus {
+
+  padding: 2rem 1.2rem;
+  outline: none;
+  transition: border-color ease-in-out 0.15s,
+    box-shadow ease-in-out 0.15s;
+  -webkit-box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.2);
+}
+
+.todo-btn {
+  width: 5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todoTitle {
+  width: 100%;
+  color: rgb(85, 41, 220);
+  border-radius: 2rem;
+  padding: 1rem 0rem;
+
+
+}
+
+.todoBg {
+  width: 55%;
+  margin: 0 auto;
+  background: linear-gradient(30deg, rgb(85, 41, 220) 6%, rgba(0, 0, 0, 0) 3%),
+    linear-gradient(30deg, rgb(255, 255, 255) 94%, rgb(85, 41, 220) 60%);
+}
+
+.todoTitle h3 {
+  font-family: cursive;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+.addItems {
+  width: 35rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 1rem 1rem;
+}
+
+.addItems .Addbtn,
+.addItems .Donebtn {
+
+  padding: 2px 30px 2px 30px;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: rgb(85, 41, 220);
   color: white;
+
 }
 
-.App-link {
-  color: #61dafb;
+.Addbtn:hover,
+.Donebtn:hover {
+  -webkit-box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.itemsList {
+  padding: 0rem 1.5rem;
+  height: 33rem;
+  overflow-y: scroll;
+}
+
+.showItems {
+
+  text-align: center;
+  overflow-y: auto;
+}
+
+.eachItem {
+  background: #fff;
+  padding: 1.2rem 1.5rem;
+  border-radius: 0.5rem;
+  margin: 0.7rem 0rem;
+  min-width: 100%;
+  word-break: break-word;
+  background: rgb(85, 41, 220);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.eachItem:hover {
+  background: rgb(249, 249, 252);
+  color: rgb(85, 41, 220);
+}
+
+.showItems .eachItem h3 {
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.fa-trash-alt,
+.fa-edit {
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 10;
+  color: rgb(251, 251, 251);
+  -webkit-transition: color 0.15s linear;
+  transition: color 0.15s linear;
+  font-size: 2rem;
+}
+
+.addItems .fa-edit {
+  color: rgb(47, 214, 122);
+}
+
+.eachItem:hover .fa-trash-alt {
+  color: rgb(214, 47, 61);
+}
+
+.eachItem:hover .fa-edit {
+  color: rgb(100, 214, 47);
+}
+
+.eachItem:hover h3 {
+  color: rgb(85, 41, 220);
+}
+
+
+@media screen and (max-width:800px) {
+  .addItems {
+    width: 28rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  input {
+    width: 60%;
+  }
+
+  .itemsList {
+    height: 38rem;
   }
 }
